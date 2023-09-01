@@ -20,111 +20,77 @@ the
 [<u>Push-Pull</u>](https://developers.oxylabs.io/scraper-apis/getting-started/integration-methods/push-pull)
 method:
 
-import requests
-
+```python
+import requests
 from pprint import pprint
 
-\# Structure payload.
-
+# Structure payload.
 payload = {
-
-'source': 'google',
-
-'url': 'https://play.google.com/store/games?hl=en_GB&gl=UK',
-
-'user_agent_type': 'desktop_edge',
-
-'render': 'html',
-
-'geo_location': 'United Kingdom',
-
-'locale': 'en-gb'
-
+   'source': 'google',
+   'url': 'https://play.google.com/store/games?hl=en_GB&gl=UK',
+   'user_agent_type': 'desktop_edge',
+   'render': 'html',
+   'geo_location': 'United Kingdom',
+   'locale': 'en-gb'
 }
 
-\# Get response.
-
+# Get response.
 response = requests.request(
-
-'POST',
-
-'https://data.oxylabs.io/v1/queries',
-
-auth=('USERNAME', 'PASSWORD'), \#Your credentials go here
-
-json=payload
-
+    'POST',
+    'https://data.oxylabs.io/v1/queries',
+    auth=('USERNAME', 'PASSWORD'), #Your credentials go here
+    json=payload
 )
 
-\# Instead of response with job status and results url, this will return
-the
-
-\# JSON response with results.
-
+# Instead of response with job status and results url, this will return the
+# JSON response with results.
 pprint(response.json())
+```
 
-Once the job is finished, you can then send another request to retrieve
+Once the job is finished, you can then send another request to retrieve
 the Google Play results. Here, you must use the **job ID** value that’s
 provided in the response of the above code sample:
 
-import requests
-
+```python
+import requests
 from pprint import pprint
 
-\# Get response.
-
+# Get response.
 response = requests.request(
-
-'GET',
-
-'http://data.oxylabs.io/v1/queries/{job_id}/results',
-
-auth=('USERNAME', 'PASSWORD')
-
+    'GET',
+    'http://data.oxylabs.io/v1/queries/{job_id}/results',
+    auth=('USERNAME', 'PASSWORD')
 )
 
-\# This will return the JSON response with results.
-
+# This will return the JSON response with results.
 pprint(response.json())
+```
 
-Visit our
+Visit our
 [<u>documentation</u>](https://developers.oxylabs.io/scraper-apis/serp-scraper-api/google/url)
 for more information.
 
 ### Output example
 
-Here’s what the response in JSON format should look like after using the
-above code sample:
+The response will be in JSON format, containing HTML content and details about the job itself:
 
-{
-
-"results": \[
-
+```json
 {
-
-"content": "\<!DOCTYPE html\>\<html lang=\\en\\
-dir=\\ltr\\\>\<head\>\<meta http-equiv=\\origin-trial\\
-content=\\Az520Inasey3TAyqLyojQa8MnmCALSEU29yQFW8dePZ7xQTvSt73pHazLFTK5f7SyLUJSo2uKLesEtEa9aUYcgMAAACPeyJvcmlnaW4iOiJodHRw...",
-
-"created_at": "2023-08-28 14:14:59",
-
-"updated_at": "2023-08-28 14:15:35",
-
-"page": 1,
-
-"url": "https://play.google.com/store/games?hl=en_GB&gl=US",
-
-"job_id": "7101930169060862977",
-
-"status_code": 200
-
+  "results": [
+    {
+      "content": "<!DOCTYPE html><html lang=\"en\" dir=\"ltr\"><head><meta http-equiv=\"origin-trial\" content=\"Az520Inasey3TAyqLyojQa8MnmCALSEU29yQFW8dePZ7xQTvSt73pHazLFTK5f7SyLUJSo2uKLesEtEa9aUYcgMAAACPeyJvcmlnaW4iOiJodHRw...",
+      "created_at": "2023-08-28 14:14:59",
+      "updated_at": "2023-08-28 14:15:35",
+      "page": 1,
+      "url": "https://play.google.com/store/games?hl=en_GB&gl=US",
+      "job_id": "7101930169060862977",
+      "status_code": 200
+    }
+  ]
 }
+```
 
-\]
-
-}
-
-With Oxylabs’ Google Play Scraper API, the data extraction process is
+With Oxylabs’ Google Play Scraper API, the data extraction process is
 as easy as it gets. Feel free to contact our 24/7 support team via live
 chat or [<u>email</u>](mailto:support@oxylabs.io) if you need
 assistance.
