@@ -21,7 +21,7 @@ any public Google Play page you have provided.
 The following examples demonstrate how you can get Google Play results
 in HTML format. To begin, you need to send the request to our API using
 the
-[<u>Push-Pull</u>](https://developers.oxylabs.io/scraper-apis/getting-started/integration-methods/push-pull)
+[<u>Push-Pull</u>](https://developers.oxylabs.io/scraper-apis/serp-scraper-api/integration-methods/push-pull)
 method:
 
 ```python
