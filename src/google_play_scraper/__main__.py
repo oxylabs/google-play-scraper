@@ -29,7 +29,7 @@ def scrape_google_play(query: str, category: str) -> None:
     try:
         category = GooglePlayCategory(category)
     except ValueError:
-        categories = ", ".join(GooglePlayCategory.__members__.keys())
+        categories = ", ".join(GooglePlayCategory.__members__.values())
         logging.error(f"Invalid category {category}. Must be one of: {categories}")
         return
 
