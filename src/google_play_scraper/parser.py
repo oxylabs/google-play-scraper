@@ -104,8 +104,11 @@ class GooglePlayParser:
         """Parses movie item from Google Play"""
         title = div.find_element(By.CLASS_NAME, "Epkrse").text
         url = div.get_attribute("href")
+
         try:
-            rating = div.find_element(By.CLASS_NAME, "LrNMN").text
+            top_element = div.find_element(By.CLASS_NAME, "LrNMN")
+            _ = top_element.find_element(By.CLASS_NAME, "wuy56")
+            rating = top_element.text
         except NoSuchElementException:
             rating = None
 
