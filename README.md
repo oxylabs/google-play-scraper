@@ -10,7 +10,74 @@ download rates, reviews, and more. This short tutorial will show you how
 to scrape Google Play using Oxylabs’ [<u>Scraper
 API</u>](https://oxylabs.io/products/scraper-api).
 
-## How it works
+## Free Google Play Scraper
+
+A free tool used to get data for apps, books or movies from Google Play for a provided search query.
+
+### Prerequisites
+
+To run this tool, you need to have Python 3.11 installed in your system.
+
+### Installation
+
+Open up a terminal window, navigate to this repository and run this command:
+
+```make install```
+
+### Scraping Google Play
+
+To scrape data from Google Play, first choose one of these categories, that are available in Google Play:
+
+- `apps`
+- `movies`
+- `books`
+
+The default category in the tool is `apps`, so feel free to omit the `CATEGORY` parameter from the command if that's the category you need.
+
+If you prefer to choose a different category than `Apps`, run this command in your terminal:
+
+```make scrape QUERY="<your_query>" CATEGORY="<your_chosen_category>```
+
+Otherwise, the command should look like this:
+
+```make scrape QUERY="<your_query>"```
+
+Make sure the category is in lowercase. 
+
+
+For this example, let's try scraping Google Play results for movies about fishing. The command should look something like this:
+
+```make scrape QUERY="fishing" CATEGORY="movies"```
+
+Make sure to enclose your query and category in quotation marks, otherwise the tool might have trouble parsing it.
+
+After running the command, your terminal should look something like this:
+
+<img width="845" alt="image" src="https://github.com/user-attachments/assets/622cda14-820c-42ec-810b-f099b5561dbf">
+
+After the tool has finished running, you should see a file named `movies_play_items.csv` in your current directory.
+
+This file contains Google Play items for the query and category you entered. 
+
+The file name will always be in this format: `{category}_play_items.csv`.
+
+The generated CSV file contains these columns of data:
+
+- `title` - The title of the movie.
+- `price` - The price of the movie to rent.
+- `rating` - The rating of the movie.
+- `cover_url` - The URL to the image of the cover for the movie.
+- `url` - The URL for the movie.
+
+Here's an example of how the data can look like:
+
+<img width="982" alt="image" src="https://github.com/user-attachments/assets/066e25bf-c4e8-4144-95bf-942453dd484f">
+
+### Notes
+
+In case the code doesn't work or your project is of bigger scale, please refer to the second part of the tutorial. There, we showcase how to scrape public data with Oxylabs Scraper API.
+
+## Scrape Google Play data with Oxylabs Scraper API
 
 You can retrieve Google Play results by providing your target URLs and
 forming a payload with job parameters. Our API will return the HTML of
