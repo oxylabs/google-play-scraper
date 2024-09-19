@@ -83,6 +83,8 @@ In case the code doesn't work or your project is of bigger scale, please refer t
 
 ## Scrape Google Play data with Oxylabs Scraper API
 
+After purchasing access to the API or claiming your free trial, you'll have to use your API credentials for authentication.
+
 You can retrieve Google Play results by providing your target URLs and
 forming a `payload` with job parameters. [Scraper API](https://oxylabs.io/products/scraper-api) will return the **HTML** of
 any public Google Play page you have provided.
@@ -163,6 +165,8 @@ The response will be in JSON format, containing HTML content and details about t
   ]
 }
 ```
+To get parsed results, use the free [Custom Parser](https://developers.oxylabs.io/scraper-apis/serp-scraper-api/features/custom-parser) feature. Check out this in-depth [Custom Parser tutorial](https://github.com/oxylabs/custom-parser-instructions) to learn how to use it.
+
 
 With Oxylabs’ Google Play Scraper API, the data extraction process is
 as easy as it gets. Feel free to contact our 24/7 support team via live
