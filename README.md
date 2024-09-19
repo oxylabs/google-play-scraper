@@ -4,27 +4,27 @@
 
 [![](https://dcbadge.vercel.app/api/server/eWsVUJrnG5)](https://discord.gg/GbxmdGhZjq)
 
-[Google Play Scraper](https://oxylabs.io/products/scraper-api/serp/google) enables fast and efficient application data
-extraction from Google Play, including title, price, version number,
-download rates, reviews, and more. This short tutorial will show you how
-to scrape Google Play using Oxylabs’ [<u>Scraper
-API</u>](https://oxylabs.io/products/scraper-api).
+
+This tutorial will show you how to gather public data from the Google Play store, including data points like title, price, version number, download rates, reviews, and more. In this repository, you can find a **free Google Play scraper tool**, designed for smaller-scale scraping tasks. If you want to increase your scraping scale, the second part of this guide will show you how to utilize a far more effective Oxylabs' [Scraper API](https://oxylabs.io/products/scraper-api). It comes with a free trial, which you can claim by registering a free account on the [dashboard](https://dashboard.oxylabs.io/).
+
 
 ## Free Google Play Scraper
 
-A free tool used to get data for apps, books or movies from Google Play for a provided search query.
+A free tool which you can use to get data for apps, books, or movies from Google Play using a specific search query.
 
 ### Prerequisites
 
-To run this tool, you need to have Python 3.11 installed in your system.
+To run this tool, you need to have Python `3.11` or later installed on your system.
 
 ### Installation
 
-Open up a terminal window, navigate to this repository and run this command:
+Open up a terminal window, navigate to this repository, and run this command:
 
 ```make install```
 
 ### Scraping Google Play
+
+#### 1. Select a category:
 
 To scrape data from Google Play, first choose one of these categories, that are available in Google Play:
 
@@ -32,36 +32,40 @@ To scrape data from Google Play, first choose one of these categories, that are 
 - `movies`
 - `books`
 
-The default category in the tool is `apps`, so feel free to omit the `CATEGORY` parameter from the command if that's the category you need.
+The default category in the tool is `apps`, so feel free to omit the `CATEGORY` parameter from the command if that's the category you need. 
 
-If you prefer to choose a different category than `Apps`, run this command in your terminal:
+If you prefer to choose a different category than `apps`, run this command in your terminal:
 
-```make scrape QUERY="<your_query>" CATEGORY="<your_chosen_category>```
+```bash
+make scrape QUERY="<your_query>" CATEGORY="<your_chosen_category>
+```
 
 Otherwise, the command should look like this:
 
-```make scrape QUERY="<your_query>"```
+```bash
+make scrape QUERY="<your_query>"
+```
 
-Make sure the category is in lowercase. 
+> [!NOTE]
+> Make sure the category name is in **lowercase**. 
 
 
-For this example, let's try scraping Google Play results for movies about fishing. The command should look something like this:
+#### 2. Use a search keyword:
 
-```make scrape QUERY="fishing" CATEGORY="movies"```
+For this example, let's try scraping Google Play results for movies about fishing. The command should look like this:
 
-Make sure to enclose your query and category in quotation marks, otherwise the tool might have trouble parsing it.
+```bash
+make scrape QUERY="fishing" CATEGORY="movies"
+```
 
-After running the command, your terminal should look something like this:
+> [!NOTE]
+> Make sure to enclose your query and category in quotation marks. Otherwise, the tool might have trouble parsing it.
+
+After running the command, you should see a similar output in your terminal:
 
 <img width="845" alt="image" src="https://github.com/user-attachments/assets/622cda14-820c-42ec-810b-f099b5561dbf">
 
-After the tool has finished running, you should see a file named `movies_play_items.csv` in your current directory.
-
-This file contains Google Play items for the query and category you entered. 
-
-The file name will always be in this format: `{category}_play_items.csv`.
-
-The generated CSV file contains these columns of data:
+After the tool finishes running, you can find a file named `movies_play_items.csv` in your current working directory. This file contains Google Play items for the query and category you entered. The file name will always be in this format: `{category}_play_items.csv`. The generated CSV file contains these columns of data:
 
 - `title` - The title of the movie.
 - `price` - The price of the movie to rent.
@@ -69,7 +73,7 @@ The generated CSV file contains these columns of data:
 - `cover_url` - The URL to the image of the cover for the movie.
 - `url` - The URL for the movie.
 
-Here's an example of how the data can look like:
+Here's an example of how the scraped and parsed data should look like:
 
 <img width="982" alt="image" src="https://github.com/user-attachments/assets/066e25bf-c4e8-4144-95bf-942453dd484f">
 
@@ -80,16 +84,16 @@ In case the code doesn't work or your project is of bigger scale, please refer t
 ## Scrape Google Play data with Oxylabs Scraper API
 
 You can retrieve Google Play results by providing your target URLs and
-forming a payload with job parameters. Our API will return the HTML of
+forming a `payload` with job parameters. [Scraper API](https://oxylabs.io/products/scraper-api) will return the **HTML** of
 any public Google Play page you have provided.
 
 ### Python code example
 
 The following examples demonstrate how you can get Google Play results
-in HTML format. To begin, you need to send the request to our API using
+in HTML format. To begin, you need to send the request to the API using
 the
 [<u>Push-Pull</u>](https://developers.oxylabs.io/scraper-apis/serp-scraper-api/integration-methods/push-pull)
-method:
+method (or [other methods](https://developers.oxylabs.io/scraper-apis/serp-scraper-api/integration-methods)):
 
 ```python
 import requests
@@ -113,8 +117,7 @@ response = requests.request(
     json=payload
 )
 
-# Instead of response with job status and results url, this will return the
-# JSON response with results.
+# This will return a JSON response with job information and results URLs.
 pprint(response.json())
 ```
 
@@ -133,7 +136,7 @@ response = requests.request(
     auth=('USERNAME', 'PASSWORD')
 )
 
-# This will return the JSON response with results.
+# This will return a JSON response with scraped results.
 pprint(response.json())
 ```
 
