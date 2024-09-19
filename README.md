@@ -5,7 +5,7 @@
 [![](https://dcbadge.vercel.app/api/server/eWsVUJrnG5)](https://discord.gg/GbxmdGhZjq)
 
 
-This tutorial will show you how to gather public data from the Google Play store, including data points like **title**, **price**, **version number**, **download rates**, **reviews**, and more. In this repository, you can find a **free Google Play scraper tool**, designed for smaller-scale scraping tasks. If you want to increase your scraping scale, the second part of this guide will show you how to utilize a far more effective Oxylabs' [Scraper API](https://oxylabs.io/products/scraper-api). It comes with a free trial, which you can claim by registering a free account on the [dashboard](https://dashboard.oxylabs.io/).
+This tutorial will show you how to gather public data from the Google Play store, including data points like **title**, **price**, **version number**, **download rates**, **reviews**, and more. In this repository, you can find a **free Google Play scraper tool**, designed for smaller-scale scraping tasks. If you want to increase your scraping scale, the second part of this guide will show you how to utilize a far more effective Oxylabs' [Scraper API](https://oxylabs.io/products/scraper-api). It comes with a **free trial**, which you can claim by registering a free account on the [dashboard](https://dashboard.oxylabs.io/).
 
 
 ## Free Google Play Scraper
