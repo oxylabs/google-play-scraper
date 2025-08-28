@@ -176,6 +176,7 @@ The response will be in JSON format, containing HTML content and details about t
 ```
 To get parsed results, use the free [Custom Parser](https://developers.oxylabs.io/scraper-apis/serp-scraper-api/features/custom-parser) feature. Check out this in-depth [Custom Parser tutorial](https://github.com/oxylabs/custom-parser-instructions) to learn how to use it.
 
+You can also request Markdown output by using `"markdown: true"` flag to get an easy-to-read result format for various workloads and AI tools.
 
 With Oxylabs’ Google Play Scraper API, the data extraction process is
 as easy as it gets. Feel free to contact our 24/7 support team via live
