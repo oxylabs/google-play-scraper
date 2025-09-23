@@ -2,7 +2,7 @@
 
 [![Oxylabs promo code](https://raw.githubusercontent.com/oxylabs/google-news-scraper/refs/heads/main/Scrape%20Google%20data%20with%20Web%20Scraper%20API.png)](https://oxylabs.io/products/scraper-api/serp/google?utm_source=877&utm_medium=affiliate&groupid=877&utm_content=google-play-scraper-github&transaction_id=102c8d36f7f0d0e5797b8f26152160)
 
-[![](https://dcbadge.vercel.app/api/server/eWsVUJrnG5)](https://discord.gg/GbxmdGhZjq)
+[![](https://dcbadge.limes.pink/api/server/Pds3gBmKMH?style=for-the-badge&theme=discord)](https://discord.gg/Pds3gBmKMH) [![YouTube](https://img.shields.io/badge/YouTube-Oxylabs-red?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/@oxylabs)
 
 This tutorial will show you how to gather public data from the Google Play store, including data points like **title**, **price**, **version number**, **download rates**, **reviews**, and more. In this repository, you can find a **free Google Play scraper tool**, designed for smaller-scale scraping tasks. If you want to increase your scraping scale, the second part of this guide will show you how to utilize a far more effective Oxylabs' [Scraper API](https://oxylabs.io/products/scraper-api). It comes with a **free trial**, which you can claim by registering a free account on the [dashboard](https://dashboard.oxylabs.io/).
 
