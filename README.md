@@ -103,8 +103,8 @@ any public Google Play page you have provided.
 The following examples demonstrate how you can get Google Play results
 in HTML format. To begin, you need to send the request to the API using
 the
-[<u>Push-Pull</u>](https://developers.oxylabs.io/scraper-apis/serp-scraper-api/integration-methods/push-pull)
-method (or [other methods](https://developers.oxylabs.io/scraper-apis/serp-scraper-api/integration-methods)):
+[<u>Push-Pull</u>](https://developers.oxylabs.io/products/web-scraper-api/integration-methods/push-pull)
+method (or [other methods](https://developers.oxylabs.io/products/web-scraper-api/integration-methods)):
 
 ```python
 import requests
@@ -152,7 +152,7 @@ pprint(response.json())
 ```
 
 Visit our
-[<u>documentation</u>](https://developers.oxylabs.io/scraper-apis/serp-scraper-api/google/url)
+[<u>documentation</u>](https://developers.oxylabs.io/api-targets/search-engines/google/url)
 for more information.
 
 ### Output example
@@ -174,7 +174,7 @@ The response will be in JSON format, containing HTML content and details about t
   ]
 }
 ```
-To get parsed results, use the free [Custom Parser](https://developers.oxylabs.io/scraper-apis/serp-scraper-api/features/custom-parser) feature. Check out this in-depth [Custom Parser tutorial](https://github.com/oxylabs/custom-parser-instructions) to learn how to use it.
+To get parsed results, use the free [Custom Parser](https://developers.oxylabs.io/products/web-scraper-api/features/custom-parser) feature. Check out this in-depth [Custom Parser tutorial](https://github.com/oxylabs/custom-parser-instructions) to learn how to use it.
 
 You can also request Markdown output by using `"markdown: true"` flag to get an easy-to-read result format for various workloads and AI tools.
 
